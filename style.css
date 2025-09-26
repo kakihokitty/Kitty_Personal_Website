@@ -1,0 +1,10 @@
+* {
+    color: rgb(0, 0, 212); /*a comment */
+    margin: 15px;
+    font: 14px Tahoma;
+    background-color: rgb(252, 189, 0);
+}
+
+button{
+    color: black;
+}
