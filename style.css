@@ -1,62 +1,144 @@
+/* General Styles - Adjusted for Yellow Theme */
 * {
-    color: rgb(0, 0, 0); /*a comment */
+    color: rgb(0, 0, 0); /* Black text */
     margin: 10px;
     font: 14px Tahoma;
-    background-color: rgb(242, 192, 8);
+    background-color: rgb(255, 242, 204); /* Light Yellow Background */
+    box-sizing: border-box; /* Important for layout */
+}
+
+body {
+    background-color: rgb(255, 255, 224); /* A slightly different yellow for the body */
 }
 
 p {
-    color:rgb(44, 139, 21);
+    color:rgb(44, 139, 21); /* Green paragraph text */
 }
 
-button.subpage {
-    color: rgb(255, 255, 255);
+/* Navigation */
+nav {
+    margin: 1em auto; /* Simplified margin */
+    width: min(1000px, 90%); /* Reduced width for responsiveness */
+    font-size: 1.5em;
+    background-color: rgb(255, 235, 153); /* A brighter yellow for the nav */
+    padding: 0.5em; /* Added padding */
+    border-radius: 0.3em; /* Rounded corners */
 }
 
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 2em;
+    padding: 0; /* Removed default padding */
+}
+
+nav p:first-child {
+    margin-right: auto;
+    font-weight: bold; /* Make it stand out */
+}
+
+/* Subpage Buttons */
+.subpage {
+    border-radius: 0.3em;
+    font-size: 1.2em;
+    color: black;
+    background-color: rgb(255, 224, 130); /* A softer yellow for buttons */
+    padding: 0.5em 1em;
+    border: none; /* Remove default border */
+    cursor: pointer;
+}
+
+.subpage:hover {
+    background-color: rgb(255, 204, 51); /* Darker yellow on hover */
+}
+
+/* Flex Container */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3em;
+    padding: 1em; /* Added padding */
+}
+
+/* Intro Button */
+.intro_button {
+    display: inline-block;
+    text-decoration: none;
+    color: black; /* Changed to black for better contrast */
+    background-color: rgb(255, 214, 102); /* Another yellow variation */
+    padding: 0.75em 1em;
+    margin-top: 1em; /* Adjusted margin */
+    border-radius: 0.5em;
+    font-weight: 600;
+}
+
+.intro_button:hover {
+    background-color: rgb(255, 193, 77); /* Darker on hover */
+}
+
+/* Text Container */
+.text_container {
+    flex: 0 1 40em;
+    padding: 1em; /* Added padding */
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Responsive columns */
+    grid-auto-rows: minmax(100px, auto); /* Adjusted row height */
+    grid-gap: 1px;
+    padding: 0.5em; /* Added padding */
+}
+
+.grid-item1 {
+    background: rgb(245, 245, 220); /* Lighter background */
+    border: solid 1px black;
+    grid-column: 1 / span 2; /* Simplified */
+    grid-row: 1;
+}
+
+.grid-item2 {
+    background: rgb(245, 245, 220);
+    border: solid 1px black;
+    grid-column: 3;
+    grid-row: 1 / span 2;
+}
+
+.grid-item3 {
+    background: rgb(245, 245, 220);
+    border: solid 1px black;
+    grid-column: 1 / span 2;
+    grid-row: 2;
+}
+
+/* Box */
 .box {
     display: flex;
-
+    padding: 0.5em; /* Added padding */
 }
 
 .box div {
     border: solid 1px black;
+    padding: 0.5em; /* Added padding */
 }
 
-.grid-container {
-    display: grid;
-    grid-template-rows: 100px 100px;
-    grid-template-columns: 100px 100px 100px;
-    grid-gap: 1px;
+/* Headings */
+h1 {
+    font-size: 2em;
+    font-family: 'Trebuchet MS' , 'Lucide Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #333; /* Darker heading color */
 }
 
-.grid-item1 {
-    background: lightgray;
-    border: solid 1px black;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
-.grid-item2 {
-    background: lightgray;
-    border: solid 1px black;
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-.grid-item3 {
-    background: lightgray;
-    border: solid 1px black;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
-h1{ color: #333; }
+/* General Button */
 button {
     border: 2px solid #AAA;
     background-color: #071ac7;
+    color: white; /* White text for contrast */
+    padding: 0.5em 1em;
+    cursor: pointer;
 }
-
 
