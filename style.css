@@ -1,144 +1,133 @@
-/* General Styles - Adjusted for Yellow Theme */
-* {
-    color: rgb(0, 0, 0); /* Black text */
-    margin: 10px;
-    font: 14px Tahoma;
-    background-color: rgb(255, 242, 204); /* Light Yellow Background */
-    box-sizing: border-box; /* Important for layout */
-}
-
+/* General Styles */
 body {
-    background-color: rgb(255, 255, 224); /* A slightly different yellow for the body */
+    font-family: 'Permanent Marker', cursive; /* Hand-drawn font */
+    margin: 0;
+    padding: 0;
+    background-color: #3dff07; /* Off-white background */
+    color: #222; /* Dark gray text */
+    line-height: 1.6;
+    
+}
+img {
+    width: 150px;  /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
 }
 
-p {
-    color:rgb(44, 139, 21); /* Green paragraph text */
+
+/* Hand-drawn underlines */
+a {
+    color: inherit;
+    text-decoration: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='5' viewBox='0 0 100 5'%3E%3Cpath d='M0,4 C30,6 70,3 100,5' fill='none' stroke='%23222' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-bottom: 0.2em;
 }
 
-/* Navigation */
-nav {
-    margin: 1em auto; /* Simplified margin */
-    width: min(1000px, 90%); /* Reduced width for responsiveness */
-    font-size: 1.5em;
-    background-color: rgb(255, 235, 153); /* A brighter yellow for the nav */
-    padding: 0.5em; /* Added padding */
-    border-radius: 0.3em; /* Rounded corners */
+a:hover {
+    color: #e40046; /* A pop of color on hover */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='5' viewBox='0 0 100 5'%3E%3Cpath d='M0,4 C30,6 70,3 100,5' fill='none' stroke='%23e40046' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* Header */
+header {
+    padding: 2em;
+    text-align: center;
+    border-bottom: 2px solid #222;
+    margin-bottom: 2em;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
 }
 
 nav ul {
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    gap: 2em;
-    padding: 0; /* Removed default padding */
-}
-
-nav p:first-child {
-    margin-right: auto;
-    font-weight: bold; /* Make it stand out */
-}
-
-/* Subpage Buttons */
-.subpage {
-    border-radius: 0.3em;
-    font-size: 1.2em;
-    color: black;
-    background-color: rgb(255, 224, 130); /* A softer yellow for buttons */
-    padding: 0.5em 1em;
-    border: none; /* Remove default border */
-    cursor: pointer;
-}
-
-.subpage:hover {
-    background-color: rgb(255, 204, 51); /* Darker yellow on hover */
-}
-
-/* Flex Container */
-.flex-container {
+    list-style: none;
+    padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 3em;
-    padding: 1em; /* Added padding */
+    gap: 2em;
 }
 
-/* Intro Button */
-.intro_button {
-    display: inline-block;
-    text-decoration: none;
-    color: black; /* Changed to black for better contrast */
-    background-color: rgb(255, 214, 102); /* Another yellow variation */
-    padding: 0.75em 1em;
-    margin-top: 1em; /* Adjusted margin */
-    border-radius: 0.5em;
-    font-weight: 600;
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
 }
 
-.intro_button:hover {
-    background-color: rgb(255, 193, 77); /* Darker on hover */
+section {
+    margin-bottom: 3em;
 }
 
-/* Text Container */
-.text_container {
-    flex: 0 1 40em;
-    padding: 1em; /* Added padding */
+.hero {
+    text-align: center;
 }
 
-/* Grid Container */
-.grid-container {
+.hero img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1em;
+    border: 2px solid #222;
+}
+
+/* Work Grid */
+.work-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Responsive columns */
-    grid-auto-rows: minmax(100px, auto); /* Adjusted row height */
-    grid-gap: 1px;
-    padding: 0.5em; /* Added padding */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
 }
 
-.grid-item1 {
-    background: rgb(245, 245, 220); /* Lighter background */
-    border: solid 1px black;
-    grid-column: 1 / span 2; /* Simplified */
-    grid-row: 1;
+.work-item {
+    border: 2px solid #222;
+    padding: 1em;
+    text-align: center;
 }
 
-.grid-item2 {
-    background: rgb(245, 245, 220);
-    border: solid 1px black;
-    grid-column: 3;
-    grid-row: 1 / span 2;
+.work-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1em;
 }
 
-.grid-item3 {
-    background: rgb(245, 245, 220);
-    border: solid 1px black;
-    grid-column: 1 / span 2;
-    grid-row: 2;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1em;
+    border-top: 2px solid #222;
+    margin-top: 4em;
 }
 
-/* Box */
-.box {
-    display: flex;
-    padding: 0.5em; /* Added padding */
+/* "Hand-drawn" Box Shadow */
+.work-item, .hero img {
+    box-shadow: 5px 5px 0px #222; /* Offset shadow for a hand-drawn look */
 }
 
-.box div {
-    border: solid 1px black;
-    padding: 0.5em; /* Added padding */
+/* scatterplot Styling */
+#vis-scatterplot {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+    border-radius: 0.5em; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Add a shadow */
+    
+    padding: 2em;
+    margin-bottom: 2em; /* Add space below */
 }
 
-/* Headings */
-h1 {
-    font-size: 2em;
-    font-family: 'Trebuchet MS' , 'Lucide Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #333; /* Darker heading color */
+#vis-scatterplot circle {
+    fill: rgb(255, 238, 0); /* Change to your desired color */
+}
+/* Tree Data Styling */
+#vis-treedate {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+    border-radius: 0.5em; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Add a shadow */
+    padding: 2em;
+    margin-bottom: 2em; /* Add space below */
 }
 
-/* General Button */
-button {
-    border: 2px solid #AAA;
-    background-color: #071ac7;
-    color: white; /* White text for contrast */
-    padding: 0.5em 1em;
-    cursor: pointer;
+/* Add a subtle glow to the tree nodes */
+.node circle {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
-

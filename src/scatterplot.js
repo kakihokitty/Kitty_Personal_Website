@@ -1,5 +1,6 @@
  
         // Sample data - Replace with your actual data
+        (function(){
         const data = [
             { year: 2018, type: "Painting", count: 5 },
             { year: 2018, type: "Sculpture", count: 2 },
@@ -128,5 +129,5 @@
                     .style("opacity", 0);
                 d3.select(this)
                     .style("stroke", "#000")
-                    .style("stroke-width", 0.5);
-            });
+                    .style("stroke-width", 0.5);})
+                })();
