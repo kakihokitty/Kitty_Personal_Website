@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", 
+    function() {
     const data3 = [
         { axis: "Strength", value: 0.8 },
         { axis: "Speed", value: 0.7 },

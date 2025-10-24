@@ -131,3 +131,60 @@ footer {
 .node circle {
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
+
+/* Basic CSS for the node-link diagram */
+ .node circle {
+ fill: #fff;
+ stroke: steelblue;
+ stroke-width: 1.5px;
+ }
+
+
+ .node text {
+ font-size: 12px;
+ font-family: sans-serif;
+ }
+
+
+ .link {
+ fill: none;
+ stroke: #ccc;
+ stroke-width: 2px;
+ }
+
+
+ .node--editing circle {
+ fill: lightgreen; /* Example: Editing skill nodes are green */
+ }
+
+
+ .node--personality circle {
+ fill: lightcoral; /* Example: Personality nodes are red */
+ }
+
+ /* Basic CSS for the node-link diagram to an AM*/
+  body {
+  font-family: sans-serif;
+  }
+ 
+
+  .matrix-cell {
+  stroke: #ccc;
+  stroke-width: 0.5px;
+  }
+ 
+
+  .matrix-label {
+  font-size: 10px;
+  }
+ 
+
+  .tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 12px;
+  pointer-events: none;
+  opacity: 0;
+  }
