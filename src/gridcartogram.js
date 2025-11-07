@@ -49,46 +49,40 @@
   { "name": "HI", "row": 5, "col": 9, "population": 1.4 },
   { "name": "FL", "row": 5, "col": 8, "population": 21.0 }
   ];
- 
-
   // Grid dimensions
   const numCols = 10;
   const numRows = 6;
- 
-
   // Cell size and margins
   const cellSize = 50;
   const margin = { top: 20, right: 20, bottom: 30, left: 40 };
   const width = numCols * cellSize + margin.left + margin.right;
   const height = numRows * cellSize + margin.top + margin.bottom;
- 
-
   // Color scale (adjust as needed)
   const colorScale = d3.scaleLinear()
   .domain([d3.min(stateData, d => d.population), d3.max(stateData, d => d.population)])
   .range(["#deebf7", "#3182bd"]);
- 
-
   // Create SVG element
   const svg = d3.select("#vis-gridcartogram")
   .append("svg")
   .attr("width", width)
-  .attr("height", height);
- 
-
+  .attr("height", height)
+  .call(d3.zoom()
+  .scaleExtent([1, 8]) // Set zoom limits
+  .on("zoom", zoomed));
+  // Create a container for the chart elements to apply transformations
+  const chart = svg.append("g")
+  .attr("transform", `translate(${margin.left}, ${margin.top})`);
   // Create tooltip
   const tooltip = d3.select("body").append("div")
   .attr("class", "tooltip")
   .style("opacity", 0);
- 
-
   // Create grid cells
-  svg.selectAll(".state-cell")
+  const cells = chart.selectAll(".state-cell")
   .data(stateData)
   .enter().append("rect")
   .attr("class", "state-cell")
-  .attr("x", d => d.col * cellSize + margin.left)
-  .attr("y", d => d.row * cellSize + margin.top)
+  .attr("x", d => d.col * cellSize)
+  .attr("y", d => d.row * cellSize)
   .attr("width", cellSize)
   .attr("height", cellSize)
   .style("fill", d => colorScale(d.population))
@@ -105,14 +99,29 @@
   .duration(500)
   .style("opacity", 0);
   });
- 
-
   // Add state labels
-  svg.selectAll(".state-label")
+  const labels = chart.selectAll(".state-label")
   .data(stateData)
   .enter().append("text")
   .attr("class", "state-label")
-  .attr("x", d => d.col * cellSize + margin.left + cellSize / 2)
-  .attr("y", d => d.row * cellSize + margin.top + cellSize / 2)
-  .text(d => d.name);
- })();
+  .attr("x", d => d.col * cellSize + cellSize / 2)
+  .attr("y", d => d.row * cellSize + cellSize / 2)
+  .text(d => d.name)
+  .attr("text-anchor", "middle")
+  .attr("dominant-baseline", "middle");
+  // Zoom and Pan Function
+  function zoomed(event) {
+  const transform = event.transform;
+  // Apply transformation to the chart group
+  chart.attr("transform", transform);
+  // Optional: Constrain panning
+  const x = transform.x;
+  const y = transform.y;
+  const k = transform.k;
+  const maxX = -(width - margin.left - margin.right) * k;
+  const maxY = -(height - margin.top - margin.bottom) * k;
+  transform.x = Math.max(Math.min(x, 0), maxX);
+  transform.y = Math.max(Math.min(y, 0), maxY);
+  }
+  })();
+ 
