@@ -1,249 +1,221 @@
 /* General Styles */
 body {
-    font-family: 'Permanent Marker', cursive; /* Hand-drawn font */
+    font-family: "Rubik Mono One", monospace;
     margin: 0;
-    padding: 0;
-    background-color: #3dff07; /* Off-white background */
-    color: #222; /* Dark gray text */
     line-height: 1.6;
-    
-}
-img {
-    width: 150px;  /* Set a fixed width */
-    height: 150px; /* Set a fixed height */
+    background-color: rgb(81, 79, 22);
+    color: rgb(80, 44, 24);
 }
 
-
-/* Hand-drawn underlines */
-a {
-    color: inherit;
-    text-decoration: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='5' viewBox='0 0 100 5'%3E%3Cpath d='M0,4 C30,6 70,3 100,5' fill='none' stroke='%23222' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-position: bottom;
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding-bottom: 0.2em;
-}
-
-a:hover {
-    color: #e40046; /* A pop of color on hover */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='5' viewBox='0 0 100 5'%3E%3Cpath d='M0,4 C30,6 70,3 100,5' fill='none' stroke='%23e40046' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-}
-
-/* Header */
+/* Header Styles */
 header {
-    padding: 2em;
-    text-align: center;
-    border-bottom: 2px solid #222;
-    margin-bottom: 2em;
+    background-color: rgb(245, 232, 217);
+    box-shadow: 0 2px 5px rgba(245, 241, 241, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-header h1 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
+/* Navigation Bar */
+#main {
+    padding: 10px 20px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+.navbar-container {
     display: flex;
-    justify-content: center;
-    gap: 2em;
-}
-
-/* Main Content */
-main {
-    max-width: 800px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2em;
 }
 
+/* Brand (Your Name) */
+.navbar-left {
+}
+
+.navbar-brand {
+    font-size: 100em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #7f8083;
+    display: block;
+    padding: 5px 10px;
+}
+
+/* Navigation Links (Right Side) */
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.subpage,
+.instagram-link {
+    text-decoration: none;
+    color: rgb(81, 79, 22);
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background-color 0.2s ease;
+}
+
+.subpage:hover,
+.instagram-link:hover {
+    background-color: rgb(175, 173, 85);
+}
+
+/* Instagram Link */
+.instagram-link img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+/* Flex Container for Photo and Intro */
+.flex-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.text-container {
+}
+
+.intro_bytton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(175, 173, 85);
+    color: rgb(80, 44, 24);
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+/* Section Styles (Example) */
 section {
-    margin-bottom: 3em;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(234, 218, 183);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgb(234, 218, 183);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.hero {
-    text-align: center;
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
-.hero img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 1em;
-    border: 2px solid #222;
+/* Video Grid Styles */
+#work-videos {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(234, 218, 183);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgb(234, 218, 183);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Work Grid */
-.work-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2em;
+.video-grid {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly */
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 20px; /* Space between video items */
 }
 
-.work-item {
-    border: 2px solid #222;
-    padding: 1em;
-    text-align: center;
+.video-item {
+    flex: 1; /* Make each video item flexible */
+    min-width: 300px; /* Minimum width for responsiveness */
+    max-width: calc(33.333% - 20px); /* Maximum width for 3 items per row */
 }
 
-.work-item img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1em;
+.video-item iframe {
+    width: 100%; /* Make the iframe fill the container */
+    height: auto; /* Maintain aspect ratio */
+    aspect-ratio: 16/9; /* Maintain aspect ratio */
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1em;
-    border-top: 2px solid #222;
-    margin-top: 4em;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .video-item {
+        width: calc(50% - 20px); /* Two items per row on smaller screens */
+    }
 }
 
-/* "Hand-drawn" Box Shadow */
-.work-item, .hero img {
-    box-shadow: 5px 5px 0px #222; /* Offset shadow for a hand-drawn look */
+@media (max-width: 480px) {
+    .video-item {
+        width: 100%; /* One item per row on even smaller screens */
+    }
 }
 
-/* scatterplot Styling */
-#vis-scatterplot {
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
-    border-radius: 0.5em; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Add a shadow */
-    
-    padding: 2em;
-    margin-bottom: 2em; /* Add space below */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-right {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .subpage,
+    .instagram-link {
+        margin: 5px 0;
+        padding: 8px 0;
+        text-align: left;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .flex-container img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }
 
-#vis-scatterplot circle {
-    fill: rgb(255, 238, 0); /* Change to your desired color */
-}
-/* Tree Data Styling */
-#vis-treedate {
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
-    border-radius: 0.5em; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Add a shadow */
-    padding: 2em;
-    margin-bottom: 2em; /* Add space below */
+#vis-nodelink {
+    padding: 20px;
+    background-color: #cf6f6f; /* White background for contrast */
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto; /* Center the section */
+    display: block; /* Ensure it is displayed */
 }
 
-/* Add a subtle glow to the tree nodes */
-.node circle {
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+.link {
+    stroke: #999; /* Default color for links */
+    stroke-opacity: 0.6; /* Semi-transparent */
+    stroke-width: 2; /* Line thickness */
 }
 
-/* Basic CSS for the node-link diagram */
- .node circle {
- fill: #fff;
- stroke: steelblue;
- stroke-width: 1.5px;
- }
+body {
+    cursor: url('cute-cursor.png'), auto; /* Change to your image file path */
+}
 
+@keyframes gradient-animation {
+    0% { background-color: rgb(81, 79, 22); }
+    50% { background-color: rgb(175, 173, 85); }
+    100% { background-color:rgb(81, 79, 22); }
+}
 
- .node text {
- font-size: 12px;
- font-family: sans-serif;
- }
+body {
+    animation: gradient-animation 10s ease infinite; /* Endless animation */
+}
 
-
- .link {
- fill: none;
- stroke: #ccc;
- stroke-width: 2px;
- }
-
-
- .node--editing circle {
- fill: lightgreen; /* Example: Editing skill nodes are green */
- }
-
-
- .node--personality circle {
- fill: lightcoral; /* Example: Personality nodes are red */
- }
-
- /* Basic CSS for the node-link diagram to an AM*/
-  body {
-  font-family: sans-serif;
-  }
- 
-
-  .matrix-cell {
-  stroke: #ccc;
-  stroke-width: 0.5px;
-  }
- 
-
-  .matrix-label {
-  font-size: 10px;
-  }
- 
-
-  .tooltip {
-  position: absolute;
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 5px;
-  font-size: 12px;
-  pointer-events: none;
-  opacity: 0;
-  }
-
-   #map {
-            height: 500px; /* 根据需要调整高度 */
-            width: 100%;
-        }
-        .dot {
-            background-color: blue;
-            border-radius: 50%;
-            opacity: 0.7;
-            width: 6px;
-            height: 6px;
-            position: absolute;
-        }
-
-          body {
-  font-family: sans-serif;
-  }
- 
-
-  .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  }
- 
-
-  #scatterplot {
-  width: 80%;
-  max-width: 800px;
-  }
- 
-
-  .state-cell {
-  stroke: #fff;
-  stroke-width: 1px;
-  }
- 
-
-  .state-label {
-  font-size: 8px;
-  text-anchor: middle;
-  dominant-baseline: central;
-  fill: white;
-  }
- 
-
-  .tooltip {
-  position: absolute;
-  text-align: center;
-  width: 120px;
-  height: auto;
-  padding: 2px;
-  font: 12px sans-serif;
-  background: lightsteelblue;
-  border: 0px;
-  border-radius: 8px;
-  pointer-events: none;
-  }

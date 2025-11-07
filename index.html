@@ -1,97 +1,102 @@
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - kAKI HO</title>
     <link href="style.css" rel="stylesheet" />
-    <title>kAKI hO</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     
 </head>
 <body>
-    <!--<h1>This is a title from html </h1> -->
-
     <header>
         <!-- navigation bar -->
-         <nav id="main">
-            <u1>
-                <P>kAKI hO</P>
-                <a class="subpage" href="#vis-radarchart">About me</a>
-                <a class="subpage" href="my_work.html">My work</a>
-                <button id="cv" class="subpage">CV</button>
-            </u1>
-         </nav>
+        <nav id="main">
+            <div class="navbar-container">
+                <div class="navbar-left">
+                    <a class="subpage" href="index.html">H.KITTY</a>
+                </div>
+                <div class="navbar-right">
+                    <a class="subpage" href="#vis-radarchart">About me</a>
+                    <a class="subpage" href="my_work.html">My work</a>
+                    <a class="subpage" href="cv.html">CV</a>
+                    <a href="https://www.instagram.com/kitty.hokaki?igsh=MW1zMWZrNG45bnR6cg==" target="_blank" class="instagram-link">
+                        <img src="instagram_icon.png" alt="Instagram" style="width: 20px; height: 20px;">
+                    </a>
+                </div>
+            </div>
+        </nav>
 
-         <!-- photo + self-intro -->
-          <div class="flex-container">
-            <img src="me.jpg"/>
+        <!-- photo + self-intro -->
+        <div class="flex-container">
+            <img src="me.jpg" alt="Me"/>
             <div class="text-container">
                 <h1>Welcome to my website!</h1>
-                <p> My self-introduction is one sentence. </p>
-                <a class="intro_bytton" href="https://www.instagram.com/kitty.hokaki?igsh=MW1zMWZrNG45bnR6cg==">Follow me or instagram</a>
-          </div>
+                <p>My self-introduction is one sentence.</p>
+                <a class="intro_bytton" href="https://www.instagram.com/kitty.hokaki?igsh=MW1zMWZrNG45bnR6cg==" target="_blank">Get to know more about me</a>
+            </div>
         </div>
     </header>
 
-   <!--  <div id="main">
-         this is a comment 
-        This is my personal website.
-        <button class="subpage">About me</button>
-        <button class="subpage">Gallery</button>
-        <button id="cv" class="subpage">CV</button>
-        <p> My name is kitty,i like study.</p>
-        <img src="me.jpg"/>
-    </div>
-
-   <div class="box">
-        <div>One</div>
-        <div>Two</div>
-        <div>Three
-            <br> first line
-            <br> second line
+    <section id="work-videos">
+        <h2>My Work Videos</h2>
+        <div class="video-grid">
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/watch?v=EPqsC68DQfw" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/watch?v=WhxcT7euQzQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/watch?v=fFWc1-qhoSY" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/shorts/a-8AvZ_GTaM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/shorts/fq2K3cnlBS8" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/SxjZ_ctNQPc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/SxjZ_ctNQPc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/SxjZ_ctNQPc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/SxjZ_ctNQPc" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
-    </div> 
+        
+    </section>
 
-    <div class="grid-container">
-       <div id="my_work1" class="grid-item1"> My Work 1 </div>
-       <div class="grid-item2"> My Work 2 </div>
-       <div class="grid-item3"> My Work 3 </div>
-    </div> -->
-
-   <section id="scatterplot">
-    <h2>My Work Video</h2>
-    <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/SxjZ_ctNQPc"
-                frameborder="0" allowfullscreen></iframe>
-    </div>
-    <p>Here's a video showcasing some of my work. I hope you enjoy it!</p>
-</section>
-
-
-    <section id="vis-scatterplot"></section>
+    <section id="vis-scatterplot">
         <h2>This is my section</h2>
     </section>
 
-    <section id="vis-treedate"></section>
-        <h2>This is my presonal information</h2>
+    <section id="vis-treedate">
+        <h2>This is my personal information</h2>
     </section>
 
-<section id="vis-nodelink"></section>
+    <section id="vis-nodelink">
         <h2>This is my skills</h2>
     </section>
 
-    <section id="vis-adjacencymatrix"></section>
+    <section id="vis-adjacencymatrix">
         <h2>Node-Link Diagram Adjacency Matrix</h2>
     </section>
-    
-    <section id="vis-dotdensitymap"></section>
+
+    <section id="vis-dotdensitymap">
         <h2>Dot Density Map</h2>
     </section>
 
-     <section id="vis-gridcartogram"></section>
+    <section id="vis-gridcartogram">
         <h2>Grid Cartogram</h2>
     </section>
 
-    <!-- <script src="code.js"></script> -->
     <script src="src/scatterplot.js"></script>
     <script src="src/treedate.js"></script>
-    <!-- <script src="src/workboxs.js"></script> -->
     <script src="src/nodelink.js"></script>
     <script src="src/adjacencymatrix.js"></script>
     <script src="src/dotdensitymap.js"></script>
