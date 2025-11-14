@@ -51,7 +51,7 @@ header {
 .subpage,
 .instagram-link {
     text-decoration: none;
-    color: rgb(81, 79, 22);
+    color: rgb(156, 152, 34);
     padding: 8px 12px;
     border-radius: 20px;
     transition: background-color 0.2s ease;
@@ -205,9 +205,9 @@ h2 {
     stroke-width: 2; /* Line thickness */
 }
 
-body {
+/*body {
     cursor: url('cute-cursor.png'), auto; /* Change to your image file path */
-}
+
 
 @keyframes gradient-animation {
     0% { background-color: rgb(81, 79, 22); }
@@ -218,4 +218,384 @@ body {
 body {
     animation: gradient-animation 10s ease infinite; /* Endless animation */
 }
+
+/*articpart */
+       body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        #scatterplot {
+            margin-bottom: 20px;
+        }
+
+        .article-container {
+            overflow-x: auto; /* Enable horizontal scrolling */
+            white-space: nowrap; /* Prevent wrapping of article cards */
+            padding: 10px;
+        }
+
+        .article-card {
+            display: inline-block; /* Display articles horizontally */
+            width: 250px; /* Adjust as needed */
+            margin: 10px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            vertical-align: top; /* Align cards to the top */
+            overflow: hidden; /* Hide overflow text */
+            text-overflow: ellipsis; /* Show ellipsis for overflow text */
+            white-space: nowrap; /* Make sure text is on a single line */
+        }
+
+        .article-card a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .article-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .article-card p {
+            margin-bottom: 10px;
+            /* Add additional styling for the paragraph if needed */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .article-card {
+                width: 80%; /* Adjust card width for smaller screens */
+                margin: 10px auto; /* Center the cards */
+                display: block; /* Stack cards vertically on smaller screens */
+                text-align: center;
+            }
+        }
+
+        /*photo part */
+           body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+            scroll-snap-type: x mandatory;
+        }
+
+        .photo-item {
+            flex: 0 0 auto;
+            width: 200px;
+            margin: 0 10px;
+            scroll-snap-align: start;
+            cursor: pointer;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+        .modal-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .modal-images img {
+            width: 200px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+/* photo inside part */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000; /* 將 modal 置於最上層 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+/* Existing styles... */
+
+/* Photo Gallery Section */
+#photo-gallery-section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(234, 218, 183);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgb(234, 218, 183);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery-container {
+    border: 1px solid #ccc; /* Add a border to create the "box" */
+    padding: 10px; /* Add some padding inside the box */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    overflow: hidden; /* Ensure content stays within the box */
+}
+
+.modal-content {
+    display: flex; /* 使用 flexbox */
+    flex-wrap: wrap; /* 允許換行 */
+    justify-content: center; /* 水平居中對齊 */
+    gap: 10px; /* 圖片之間的間距 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white; /* 白色背景 */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.modal-content img {
+    max-width: 80%; /* 最大寬度為可用空間的80% */
+    max-height: 300px; /* 設置最大高度 */
+    height: auto; /* 保持長寬比 */
+    display: block; /* 顯示為塊元素 */
+    margin: 10px auto; /* 中間對齊 */
+}
+
+                 /* 保持長寬比 */
+
+/* contact */
+contact {
+    padding: 20px;
+   
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 20px auto; /* 上下保持 20 像素，左右自動居中 */
+    max-width: 600px; /* 設置最大寬度 */
+    text-align: center; /* 文字居中對齊 */
+}
+
+
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    padding: 15px;
+    border: 1px solid #5f1b1b;
+    border-radius: 5px;
+}
+
+.qr-code {
+    max-width: 150px; /* Set the max width for the QR code */
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+.contact-item a {
+    text-decoration: none; /* Remove underline from links */
+    color: #007BFF; /* Link color */
+}
+
+.contact-item a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* about*/
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items */
+    padding: 20px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    max-width: 800px; /* Set a max width */
+}
+
+.about-image {
+    flex: 1; /* Allow image to take 1 part of the space */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.about-image img {
+    max-width: 100%; /* Responsive image */
+    border-radius: 50%; /* Make it a circle */
+}
+
+.about-text {
+    flex: 2; /* Allow text to take 2 parts of the space */
+}
+
+.about-text h2, .about-text p, .hobbies h3 {
+    color: brown; /* Change text color to brown */
+}
+
+.hobbies {
+    margin-top: 20px; /* Space above the hobbies section */
+    text-align: center; /* Center the text */
+}
+
+.hobbies-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items */
+    gap: 20px; /* Space between items */
+}
+
+.hobby-item {
+    position: relative; /* Position for the hover effect */
+    overflow: hidden; /* Ensure images don’t overflow */
+    width: 150px; /* Fixed width for hobby items */
+}
+
+.hobby-image {
+    width: 100%; /* Responsive image */
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+.hobby-item:hover .hobby-image {
+    transform: scale(1.1); /* Scale the image on hover */
+}
+
+/*featuredwork*/
+
+#featured-works {
+    position: relative;
+    overflow: hidden;      /* Hide images that overflow */
+    max-width: 1200px;    /* Match to the width of other sections */
+    margin: 20px auto;    /* Add consistent vertical spacing */
+    /* Optional styling */
+    border-radius: 8px;    /* Rounded corners */
+}
+
+
+.carousel {
+    display: flex;
+    animation: slide 12s infinite; /* Animation duration */
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 1s ease; /* Smooth transition */
+}
+
+.carousel-images img {
+    width: 100%;          /* Responsive image */
+    height: 400px;       /* Increase the fixed height for a larger display */
+    object-fit: cover;    /* Cover the entire area without distortion */
+}
+
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    45% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    70% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    95% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
+
+/*------------------*/
+#best-works {
+    max-width: 1200px; /* 對齊其他部分 */
+    margin: 20px auto; /* 上下間距 */
+    text-align: center; /* 文字居中 */
+}
+
+.gallery {
+    display: flex; /* 使用 flexbox */
+    justify-content: center; /* 水平居中 */
+    gap: 20px; /* 圖片之間的間距 */
+}
+
+.gallery-item {
+    flex: 0 1 auto; /* 自適應寬度 */
+}
+
+.gallery-item img {
+    width: 300px; /* 設置固定寬度 */
+    height: auto; /* 自動調整高度以保持比例 */
+    border-radius: 10px; /* 圓角效果 */
+}
+
+.more-info {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(175, 173, 85);
+    color: rgb(80, 44, 24);
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 20px; /* 上方間距 */
+}
+
 
